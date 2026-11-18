@@ -3,7 +3,7 @@ from decimal import Decimal
 
 class ExpenseCreate(BaseModel):
     title : str = Field(min_length=1,max_length=100)
-    amount : Decimal =  Field(ge=0,decimal_places=2,max_digits=10)
+    amount : Decimal =  Field(gt=0,decimal_places=2,max_digits=10)
     category : str = Field(min_length=1,max_length=50)
 
 class ExpenseResponse(BaseModel):

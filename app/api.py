@@ -60,7 +60,7 @@ def get_expense_summary(db: Session = Depends(get_db)):
 @app.get('/expenses',response_model = ExpensePage)
 def get_expenses(category : str|None = None,
                  skip : int = Query(default = 0,ge=0),
-                 limit : int = Query(default = 10,ge=0,lt=100),
+                 limit : int = Query(default = 10,ge=0,le=100),
                  db:Session = Depends(get_db)):
     'returns the expenses data'
 
